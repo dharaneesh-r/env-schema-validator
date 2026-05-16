@@ -248,7 +248,7 @@ ADMIN_EMAIL=admin@example.com
 ## Contributing
 
 ```bash
-git clone https://github.com/yourusername/env-schema-validator
+git clone https://github.com/dharaneesh-r/env-schema-validator
 cd env-schema-validator
 npm install
 npm test          # run tests
@@ -260,4 +260,4 @@ npm run build     # build dist/
 
 ## License
 
-MIT © Your Name
+MIT © Dharaneesh R
