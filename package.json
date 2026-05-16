@@ -1,6 +1,6 @@
 {
-  "name": "env-schema-validator",
-  "version": "1.0.0",
+  "name": "@dharaneesh/env-schema-validator",
+  "version": "1.0.1",
   "description": "Zero-dependency TypeScript-first .env validator. Fails fast with clear, human-readable errors.",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -21,9 +21,9 @@
     "prepublishOnly": "npm run build && npm run test"
   },
   "keywords": ["env", "dotenv", "validator", "schema", "typescript", "environment", "zero-dependency"],
-  "author": "Your Name <you@example.com>",
+  "author": "Dharaneesh R",
   "license": "MIT",
-  "repository": { "type": "git", "url": "https://github.com/yourusername/env-schema-validator" },
+  "repository": { "type": "git", "url": "https://github.com/dharaneesh/env-schema-validator" },
   "devDependencies": {
     "@types/node": "^20.0.0",
     "tsup": "^8.0.0",

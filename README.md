@@ -1,7 +1,7 @@
-# env-schema-validator
+# @dharaneesh/env-schema-validator
 
-[![npm version](https://img.shields.io/npm/v/env-schema-validator)](https://www.npmjs.com/package/env-schema-validator)
-[![license](https://img.shields.io/npm/l/env-schema-validator)](./LICENSE)
+[![npm version](https://img.shields.io/npm/v/@dharaneesh/env-schema-validator)](https://www.npmjs.com/package/@dharaneesh/env-schema-validator)
+[![license](https://img.shields.io/npm/l/@dharaneesh/env-schema-validator)](./LICENSE)
 [![zero dependencies](https://img.shields.io/badge/dependencies-0-brightgreen)](./package.json)
 [![types](https://img.shields.io/badge/TypeScript-first-blue)](./src/index.ts)
 
@@ -25,7 +25,7 @@ You only discover missing or malformed env vars when your app crashes in product
 ## The Solution
 
 ```ts
-import { validateEnv } from "env-schema-validator";
+import { validateEnv } from "@dharaneesh/env-schema-validator";
 
 const env = validateEnv({
   PORT:         { type: "number",  default: "3000" },
@@ -56,7 +56,7 @@ EnvValidationError: Environment validation failed:
 ## Installation
 
 ```bash
-npm install env-schema-validator
+npm install @dharaneesh/env-schema-validator
 ```
 
 No other dependencies needed. Works with Node.js 18+, ESM and CJS projects.
@@ -68,7 +68,7 @@ No other dependencies needed. Works with Node.js 18+, ESM and CJS projects.
 ### Basic
 
 ```ts
-import { validateEnv } from "env-schema-validator";
+import { validateEnv } from "@dharaneesh/env-schema-validator";
 
 const env = validateEnv({
   APP_NAME: { type: "string" },
@@ -84,7 +84,7 @@ console.log(env.DEBUG); // false (boolean, not string)
 
 ```ts
 import "dotenv/config"; // loads .env into process.env first
-import { validateEnv } from "env-schema-validator";
+import { validateEnv } from "@dharaneesh/env-schema-validator";
 
 const env = validateEnv({
   DATABASE_URL: { type: "url" },
@@ -98,7 +98,7 @@ Create one file that validates everything at startup. Import it everywhere.
 
 ```ts
 // src/config.ts
-import { validateEnv } from "env-schema-validator";
+import { validateEnv } from "@dharaneesh/env-schema-validator";
 
 export const config = validateEnv({
   NODE_ENV:     { type: "string",  enum: ["development", "production", "test"] },
@@ -178,7 +178,7 @@ function validateEnv<S extends EnvSchema>(
 ### `EnvValidationError`
 
 ```ts
-import { validateEnv, EnvValidationError } from "env-schema-validator";
+import { validateEnv, EnvValidationError } from "@dharaneesh/env-schema-validator";
 
 try {
   const env = validateEnv(schema);
@@ -203,7 +203,7 @@ try {
 
 ## Why Not Just Use `envalid` or `zod`?
 
-| Feature                          | `dotenv` | `envalid` | `zod` | **env-schema-validator** |
+| Feature                          | `dotenv` | `envalid` | `zod` | **@dharaneesh/env-schema-validator** |
 |----------------------------------|:--------:|:---------:|:-----:|:------------------------:|
 | Zero runtime dependencies        | ✅        | ❌         | ❌    | ✅                        |
 | TypeScript types from schema     | ❌        | ✅         | ✅    | ✅                        |
@@ -219,7 +219,7 @@ try {
 Full types come included — no `@types/` package needed.
 
 ```ts
-import { validateEnv, EnvSchema, ValidatedEnv, EnvValidationError } from "env-schema-validator";
+import { validateEnv, EnvSchema, ValidatedEnv, EnvValidationError } from "@dharaneesh/env-schema-validator";
 
 const schema = {
   PORT: { type: "number" as const },
@@ -248,8 +248,8 @@ ADMIN_EMAIL=admin@example.com
 ## Contributing
 
 ```bash
-git clone https://github.com/dharaneesh-r/env-schema-validator
-cd env-schema-validator
+git clone https://github.com/dharaneesh-r/@dharaneesh/env-schema-validator
+cd @dharaneesh/env-schema-validator
 npm install
 npm test          # run tests
 npm run test:watch  # watch mode
